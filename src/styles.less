@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import "app/shared/less/verbs-app-variables.less";
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	line-height: 20px;
+	font-family: Arial;
+	background-color: @verbs-app-body-bg-color;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-size: 1.5em;
+		line-height: 2.7em;
+		color: white;
+	}
+
+	h2 {
+		text-align: center;
+	} 
+}

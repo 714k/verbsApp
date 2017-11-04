@@ -1,0 +1,58 @@
+@import "../shared/less/verbs-app-variables.less";
+@import "../shared/less/verbs-app-mixins.less";
+//@import "/app/shared/verbs-app-variables.less";
+
+.search {
+	position: absolute;
+	z-index: 3;
+	top: 1em;
+	right: 0;
+	width: 96%; // open
+	width: 2em;
+	height: 2em;
+	padding: 0 2%;
+	background-color: @verbs-app-main-bg-color;
+
+	.search-btn {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: 0.5em;
+		width: 2em;
+		height: 100%;
+		text-align: center;
+		font-size: 1.25em;
+		color: white;
+		vertical-align: middle;
+		background-color: transparent;
+		border: none;
+
+		.fa-search {
+			font-weight: normal;
+			//display: none;
+		}
+	}
+
+
+
+	input[type="text"] {
+		width: 100%;
+		height: 100%;
+		padding: 0.25em 0.25em 0.25em 0.5em;
+		color: white;
+		background-color: transparent;
+		border: none;
+		border-bottom: solid 1px @verbs-app-placeholder-color;
+		display: none;
+
+		&::-webkit-input-placeholder {
+		  color: @verbs-app-placeholder-color;
+		}
+		::-moz-placeholder {
+		  color: @verbs-app-placeholder-color;
+		}
+		:-ms-input-placeholder {
+		  color: @verbs-app-placeholder-color;
+		}
+	}
+}

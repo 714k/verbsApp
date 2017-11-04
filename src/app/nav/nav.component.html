@@ -1,0 +1,10 @@
+<button class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
+<nav>
+	<ul>
+		<li *ngFor="let navItem of mainMenuItems"
+				routerLinkActive="selected">
+			<a [routerLink] = "[navItem.path]">{{ navItem.title }}</a>
+		</li>
+	</ul>
+</nav>
+
