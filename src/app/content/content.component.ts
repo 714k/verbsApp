@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { NavService, MenuItem } from '../nav/nav.service';
-//import { ContentService } from './content.service';
 
 @Component({
   selector: 'verbs-app-content',
@@ -9,12 +8,13 @@ import { NavService, MenuItem } from '../nav/nav.service';
   styleUrls: ['./content.component.less']
 })
 export class ContentComponent implements OnInit {
-	currentSection: any;
+  currentSection: any;
 	subscription: Subscription;
 
   constructor(private navService: NavService) {
 		this.subscription = this.navService.getCurrentSection().subscribe(data => { 
 			this.currentSection = data.currentSection;
+
 		});
 		//this.subscription = this.contentService.getDataSection().subscribe(data => { this.currentSection = data.currentSection; });
   }
@@ -26,7 +26,6 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
-  	//console.log('this.dataSection: ', this.dataSection);
   }
 
 }

@@ -10,6 +10,7 @@ import { NavService, MenuItem } from './nav.service';
 export class NavComponent implements OnInit {
 	mainMenuItems;
 	currentSection;
+  titleSection;
 /*	menuItems = [
 		'Home',
 		'Verbs Introduction',
@@ -32,13 +33,13 @@ export class NavComponent implements OnInit {
   }
 
   setCurrentSection(currentSection) {
-  	this.currentSection = currentSection;
-  	this.sendCurrentSection();
+    this.currentSection = currentSection;
+    this.sendCurrentSection();
   }
 
   sendCurrentSection(): void {
     this.navService.sendCurrentSection(this.currentSection);
-  	//console.log('this.currentSection: ', this.currentSection);
+    //console.log('this.currentSection: ', this.currentSection);
   }
 
   ngOnInit() {
