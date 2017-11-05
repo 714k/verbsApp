@@ -1,7 +1,3 @@
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
-
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 import { Injectable, OnInit } from '@angular/core';
@@ -17,26 +13,10 @@ export class MenuItem {
 @Injectable()
 export class NavService {
   activeMenuItem$: Observable<MenuItem>;
-  private subject = new Subject<any>();
+  private section = new Subject<any>();
+  private title = new Subject<any>();
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title
-  ) {
-
-    this.router.events
-      .filter((event) => event instanceof NavigationEnd)
-      .map(() => this.activatedRoute)
-      .map((route) => {
-        while (route.firstChild) route = route.firstChild;
-        return route;
-      })
-      .filter((route) => route.outlet === 'primary')
-      .mergeMap((route) => route.data)
-      .subscribe((event) => this.titleService.setTitle(event['title'] + ' | VerbsApp'));
-
-  }
+  constructor(private router: Router) {}
 
   getMenuItems(): MenuItem[] {
     return this.router.config
@@ -50,16 +30,16 @@ export class NavService {
       });
   }
 
-  sendCurrentSection(section: string) {
-    this.subject.next({currentSection: section, titleSection: section});
+  sendCurrentSection(section: any) {
+    this.section.next({currentSection: section});
   }
 
   getCurrentSection(): Observable<any> {
-    return this.subject.asObservable();
+    return this.section.asObservable();
   }
 
   clearCurrentSection() {
-    this.subject.next();
+    this.section.next();
   }
 
 }
