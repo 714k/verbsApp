@@ -3,7 +3,7 @@
 	<ul>
 		<li *ngFor="let navItem of mainMenuItems"
 				routerLinkActive="selected">
-			<a [routerLink] = "[navItem.path]">{{ navItem.title }}</a>
+			<a [routerLink] = "[navItem.path]" (click)="setCurrentSection(navItem.title)">{{ navItem.title }}</a>
 		</li>
 	</ul>
 </nav>

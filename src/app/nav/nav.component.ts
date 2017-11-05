@@ -9,6 +9,7 @@ import { NavService, MenuItem } from './nav.service';
 })
 export class NavComponent implements OnInit {
 	mainMenuItems;
+	currentSection;
 /*	menuItems = [
 		'Home',
 		'Verbs Introduction',
@@ -30,7 +31,19 @@ export class NavComponent implements OnInit {
     this.activeMenuItem$ = this.navService.activeMenuItem$;
   }
 
+  setCurrentSection(currentSection) {
+  	this.currentSection = currentSection;
+  	this.sendCurrentSection();
+  }
+
+  sendCurrentSection(): void {
+    this.navService.sendCurrentSection(this.currentSection);
+  	//console.log('this.currentSection: ', this.currentSection);
+  }
+
   ngOnInit() {
+  	//console.log('mainMenuItems', this.mainMenuItems);
+  	//console.log('activeMenuItem$', this.activeMenuItem$);
   }
 
 }

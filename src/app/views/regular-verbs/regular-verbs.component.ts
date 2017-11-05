@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-regular-verbs',
+  selector: 'verbs-app-regular-verbs',
   templateUrl: './regular-verbs.component.html',
   styleUrls: ['./regular-verbs.component.less']
 })
 export class RegularVerbsComponent implements OnInit {
+	sectionTitle = 'Regular Verbs';
 
   constructor() { }
 

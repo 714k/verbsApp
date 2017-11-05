@@ -43,7 +43,7 @@ const verbsRoutes: Routes = [
     path: 'verb-to-be',
     component: VerbToBeComponent,
     data: {
-      title: 'Verb To Be '
+      title: 'Verb To Be'
     }
   },
   {

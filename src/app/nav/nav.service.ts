@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 
@@ -14,6 +15,7 @@ export class MenuItem {
 @Injectable()
 export class NavService {
 	activeMenuItem$: Observable<MenuItem>;
+  private subject = new Subject<any>();
 
   constructor(private router: Router, private titleService: Title) {
   	this.activeMenuItem$ = this.router.events
@@ -37,6 +39,19 @@ export class NavService {
   			}
   		});
   }
+
+  sendCurrentSection(section: string) {
+    this.subject.next({currentSection: section, titleSection: section});
+  }
+
+  getCurrentSection(): Observable<any> {
+    return this.subject.asObservable();
+  }
+
+  clearCurrentSection() {
+    this.subject.next();
+  }
+
 
   private lastRouteWithMenuItem(route: ActivatedRoute): MenuItem {
   	let lastMenu = undefined;
