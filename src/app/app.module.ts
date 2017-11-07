@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
+import { HttpModule } from '@angular/http';
+import {  
+  FormsModule,  
+  ReactiveFormsModule  
+} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavService } from './nav/nav.service';
@@ -19,6 +24,8 @@ import { VerbsWithPrepositionsComponent } from './views/verbs-with-prepositions/
 import { VerbsWithTwoObjectsComponent } from './views/verbs-with-two-objects/verbs-with-two-objects.component';
 import { StateVerbsDynamicVerbsComponent } from './views/state-verbs-dynamic-verbs/state-verbs-dynamic-verbs.component';
 import { TheImperativeComponent } from './views/the-imperative/the-imperative.component';
+import { AdminComponent } from './views/admin/admin.component';
+import { VerbsService } from './views/admin/admin.service';
 
 @NgModule({
   declarations: [
@@ -36,16 +43,20 @@ import { TheImperativeComponent } from './views/the-imperative/the-imperative.co
     VerbsWithPrepositionsComponent,
     VerbsWithTwoObjectsComponent,
     StateVerbsDynamicVerbsComponent,
-    TheImperativeComponent
+    TheImperativeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     NavRoutingModule,
+    HttpModule,
+    FormsModule,         // <-- add this  
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/home', pathMatch: 'full' }
     ])
   ],
-  providers: [NavService],
+  providers: [NavService, VerbsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

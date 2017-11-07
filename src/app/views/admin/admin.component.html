@@ -1,0 +1,19 @@
+<h2>Admin</h2>
+
+<button (click)="getAllVerbs()">GEt all</button>
+
+{{verbs | json}}
+
+<form #f="ngForm"
+			(ngSubmit)="addVerb(f.value)">
+	<input type="text" placeholder="title" name="title" ngModel>
+	<input type="text" placeholder="meaning" name="meaning" ngModel>
+	<input type="text" placeholder="pathImg" name="pathImg" ngModel>
+	<input type="text" placeholder="infinitive" name="infinitive" ngModel>
+	<input type="text" placeholder="simplePast" name="simplePast" ngModel>
+	<input type="text" placeholder="pastParticiple" name="pastParticiple" ngModel>
+	<input type="text" placeholder="category" name="category" ngModel>
+	<input type="text" placeholder="examples" name="examples" ngModel>
+
+	<button type="submit" class="ui button">Submit</button>  
+</form>
