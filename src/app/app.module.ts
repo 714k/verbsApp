@@ -19,6 +19,7 @@ import { VerbsWithPrepositionsComponent } from './views/verbs-with-prepositions/
 import { VerbsWithTwoObjectsComponent } from './views/verbs-with-two-objects/verbs-with-two-objects.component';
 import { StateVerbsDynamicVerbsComponent } from './views/state-verbs-dynamic-verbs/state-verbs-dynamic-verbs.component';
 import { TheImperativeComponent } from './views/the-imperative/the-imperative.component';
+import { SubnavComponent } from './subnav/subnav.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TheImperativeComponent } from './views/the-imperative/the-imperative.co
     VerbsWithPrepositionsComponent,
     VerbsWithTwoObjectsComponent,
     StateVerbsDynamicVerbsComponent,
-    TheImperativeComponent
+    TheImperativeComponent,
+    SubnavComponent
   ],
   imports: [
     BrowserModule,

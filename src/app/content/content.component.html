@@ -1,4 +1,5 @@
 <div class="container" [ngSwitch]="currentSection">
+	<verbs-app-subnav></verbs-app-subnav>
 	<verbs-app-home *ngSwitchCase="'Home'"></verbs-app-home>
 	<verbs-app-regular-verbs *ngSwitchCase="'Regular Verbs'"></verbs-app-regular-verbs>
 	<verbs-app-irregular-verbs *ngSwitchCase="'Irregular Verbs'"></verbs-app-irregular-verbs>
