@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { routing } from './app.routing';
 import { NavService } from './nav/nav.service';
-import { NavRoutingModule } from './nav/nav.module';
+//import { NavRoutingModule } from './nav/nav.module';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { ContentComponent } from './content/content.component';
@@ -20,6 +21,8 @@ import { VerbsWithTwoObjectsComponent } from './views/verbs-with-two-objects/ver
 import { StateVerbsDynamicVerbsComponent } from './views/state-verbs-dynamic-verbs/state-verbs-dynamic-verbs.component';
 import { TheImperativeComponent } from './views/the-imperative/the-imperative.component';
 import { SubnavComponent } from './subnav/subnav.component';
+import { CategoryComponent } from './views/category/category.component';
+import { VerbComponent } from './views/verb/verb.component';
 
 @NgModule({
   declarations: [
@@ -38,14 +41,14 @@ import { SubnavComponent } from './subnav/subnav.component';
     VerbsWithTwoObjectsComponent,
     StateVerbsDynamicVerbsComponent,
     TheImperativeComponent,
-    SubnavComponent
+    SubnavComponent,
+    CategoryComponent,
+    VerbComponent
   ],
   imports: [
     BrowserModule,
-    NavRoutingModule,
-    RouterModule.forRoot([
-      {path: '', redirectTo: '/home', pathMatch: 'full' }
-    ])
+    //NavRoutingModule,
+    routing
   ],
   providers: [NavService],
   bootstrap: [AppComponent]
