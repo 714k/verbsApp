@@ -1,5 +1,6 @@
-/*import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { HomeComponent } from '../views/home/home.component';
 import { RegularVerbsComponent } from '../views/regular-verbs/regular-verbs.component';
 import { IrregularVerbsComponent } from '../views/irregular-verbs/irregular-verbs.component';
@@ -12,7 +13,8 @@ import { TheImperativeComponent } from '../views/the-imperative/the-imperative.c
 import { CategoryComponent } from '../views/category/category.component';
 import { VerbComponent } from '../views/verb/verb.component';
 
-const verbsRoutes: Routes = [
+
+const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
@@ -25,13 +27,32 @@ const verbsRoutes: Routes = [
     component: RegularVerbsComponent,
     children: [
       {
-        path: 'by-category',
+        path: 'regular-verbs/by-category',
         component: CategoryComponent,
         outlet: 'subnav',
         data: {
-          title: 'By Category'
+          title: 'By Category',
+          parent: 'Regular Verbs'
         }
-      }
+      },
+      {
+        path: 'regular-verbs/by-type',
+        component: CategoryComponent,
+        outlet: 'subnav',
+        data: {
+          title: 'By Type',
+          parent: 'Regular Verbs'
+        }
+      },
+      {
+        path: 'regular-verbs/by-memory',
+        component: CategoryComponent,
+        outlet: 'subnav',
+        data: {
+          title: 'By Memory',
+          parent: 'Regular Verbs'
+        }
+      },
     ],
     data: {
       title: 'Regular Verbs'
@@ -42,30 +63,32 @@ const verbsRoutes: Routes = [
     component: IrregularVerbsComponent,
     children: [
       {
-        path: 'by-title',
+        path: 'irregular-verbs/by-category',
         component: CategoryComponent,
         outlet: 'subnav',
         data: {
-          title: 'By Title'
+          title: 'By Category',
+          parent: 'Irregular Verbs'
         }
-      }
-    ],
-    data: {
-      title: 'Irregular Verbs'
-    }
-  },
-  {
-    path: 'irregular-verbs/:title',
-    component: VerbComponent,
-    children: [
+      },
       {
-        path: 'by-title',
+        path: 'irregular-verbs/by-type',
         component: CategoryComponent,
         outlet: 'subnav',
         data: {
-          title: 'By Title'
+          title: 'By Type',
+          parent: 'Irregular Verbs'
         }
-      }
+      },
+      {
+        path: 'irregular-verbs/by-memory',
+        component: CategoryComponent,
+        outlet: 'subnav',
+        data: {
+          title: 'By Memory',
+          parent: 'Irregular Verbs'
+        }
+      },
     ],
     data: {
       title: 'Irregular Verbs'
@@ -113,13 +136,10 @@ const verbsRoutes: Routes = [
       title: 'The Imperative'
     }
   },
+  {
+  	path: '**', 
+  	redirectTo: 'home'
+  }
 ];
 
-@NgModule({
-  imports: [
-  	RouterModule.forChild(verbsRoutes)
-  ],
-  exports: [RouterModule]
-})
-
-export class NavRoutingModule {}*/
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: true });

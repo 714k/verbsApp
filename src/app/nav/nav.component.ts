@@ -8,25 +8,11 @@ import { NavService, MenuItem } from './nav.service';
   styleUrls: ['./nav.component.less']
 })
 export class NavComponent implements OnInit {
-	mainMenuItems;
-	currentSection;
+  mainMenuItems;
+  currentSection;
   titleSection;
   showNav:boolean = false;
-/*	menuItems = [
-		'Home',
-		'Verbs Introduction',
-		'Regular Verbs',
-		'Irregular Verbs',
-		'Phrasal Verbs',
-		'The Verb To BE',
-		'Verbs With Prepositions',
-		'Verbs With Two Objects',
-		'Verbs With Two Objects',
-		'State Verbs / dynamic Verbs',
-		'The imperative'
-	];
-*/
-	activeMenuItem$: Observable<MenuItem>;
+  activeMenuItem$: Observable<MenuItem>;
 
   constructor(private navService: NavService) {
     this.mainMenuItems = this.navService.getMenuItems();
@@ -46,12 +32,11 @@ export class NavComponent implements OnInit {
 
   toggleNav() {
     this.showNav = !this.showNav;
-    console.log('toggleNav');
   }
 
   ngOnInit() {
-  	//console.log('mainMenuItems', this.mainMenuItems);
-  	//console.log('activeMenuItem$', this.activeMenuItem$);
+    //console.log('mainMenuItems', this.mainMenuItems);
+    //console.log('activeMenuItem$', this.activeMenuItem$);
   }
 
 }

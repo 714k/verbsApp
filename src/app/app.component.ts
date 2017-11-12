@@ -49,7 +49,6 @@ export class AppComponent implements OnInit{
       .subscribe((event) => {
         if (this.location.path() !== '') {this.isRoot = false}
           this.isRoot = true;
-          console.log(this.isRoot);
           this.titleService.setTitle(event['title'] + ' | VerbsApp');
       });
   }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { routing } from './app.routing';
+import { routing } from './core/app.routing';
 import { NavService } from './nav/nav.service';
 //import { NavRoutingModule } from './nav/nav.module';
 import { HeaderComponent } from './header/header.component';

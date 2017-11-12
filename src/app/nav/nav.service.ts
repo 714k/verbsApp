@@ -7,12 +7,18 @@ import { Title } from '@angular/platform-browser';
 export class MenuItem {
   path: string;
   title: string;
-  icon?: string;
+  children?: any;
+}
+
+export class SubMenuItem {
+  children?: any;
 }
 
 @Injectable()
 export class NavService {
   activeMenuItem$: Observable<MenuItem>;
+  activeSubMenuItem$: Observable<SubMenuItem>;
+
   private section = new Subject<any>();
   private title = new Subject<any>();
 
@@ -25,7 +31,17 @@ export class NavService {
         return {
           path: route.path,
           title: route.data.title,
-          icon: route.data.icon
+          children: route.children
+        }
+      });
+  }
+
+  getSubMenuItems(): SubMenuItem[] {
+    return this.router.config
+      .filter(route => route.data && route.children)
+      .map(route => {
+        return {
+          children: route.children
         }
       });
   }

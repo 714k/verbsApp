@@ -1,4 +1,4 @@
-/*import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from '../header/header.component';
@@ -26,6 +26,5 @@ import { SpinnerComponent } from '../spinner/spinner.component';
   	SpinnerComponent],
   providers: []
 })
-export default class CoreModule { } 
+export class CoreModule { } 
 // doesn't work core.module has no exported member 'CoreModule'
-*/
