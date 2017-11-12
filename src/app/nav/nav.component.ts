@@ -11,6 +11,7 @@ export class NavComponent implements OnInit {
 	mainMenuItems;
 	currentSection;
   titleSection;
+  showNav:boolean = false;
 /*	menuItems = [
 		'Home',
 		'Verbs Introduction',
@@ -35,11 +36,17 @@ export class NavComponent implements OnInit {
   setCurrentSection(currentSection) {
     this.currentSection = currentSection;
     this.sendCurrentSection();
+    this.toggleNav();
   }
 
   sendCurrentSection(): void {
     this.navService.sendCurrentSection(this.currentSection);
     //console.log('this.currentSection: ', this.currentSection);
+  }
+
+  toggleNav() {
+    this.showNav = !this.showNav;
+    console.log('toggleNav');
   }
 
   ngOnInit() {

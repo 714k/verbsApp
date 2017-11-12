@@ -1,18 +1,20 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from '../views/home/home.component';
-import { RegularVerbsComponent } from '../views/regular-verbs/regular-verbs.component';
-import { IrregularVerbsComponent } from '../views/irregular-verbs/irregular-verbs.component';
-import { PhrasalVerbsComponent } from '../views/phrasal-verbs/phrasal-verbs.component';
-import { VerbToBeComponent } from '../views/verb-to-be/verb-to-be.component';
-import { VerbsWithPrepositionsComponent } from '../views/verbs-with-prepositions/verbs-with-prepositions.component';
-import { VerbsWithTwoObjectsComponent } from '../views/verbs-with-two-objects/verbs-with-two-objects.component';
-import { StateVerbsDynamicVerbsComponent } from '../views/state-verbs-dynamic-verbs/state-verbs-dynamic-verbs.component';
-import { TheImperativeComponent } from '../views/the-imperative/the-imperative.component';
-import { CategoryComponent } from '../views/category/category.component';
-import { VerbComponent } from '../views/verb/verb.component';
 
-const verbsRoutes: Routes = [
+import { HomeComponent } from './views/home/home.component';
+import { RegularVerbsComponent } from './views/regular-verbs/regular-verbs.component';
+import { IrregularVerbsComponent } from './views/irregular-verbs/irregular-verbs.component';
+import { PhrasalVerbsComponent } from './views/phrasal-verbs/phrasal-verbs.component';
+import { VerbToBeComponent } from './views/verb-to-be/verb-to-be.component';
+import { VerbsWithPrepositionsComponent } from './views/verbs-with-prepositions/verbs-with-prepositions.component';
+import { VerbsWithTwoObjectsComponent } from './views/verbs-with-two-objects/verbs-with-two-objects.component';
+import { StateVerbsDynamicVerbsComponent } from './views/state-verbs-dynamic-verbs/state-verbs-dynamic-verbs.component';
+import { TheImperativeComponent } from './views/the-imperative/the-imperative.component';
+import { CategoryComponent } from './views/category/category.component';
+import { VerbComponent } from './views/verb/verb.component';
+
+
+const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
@@ -113,13 +115,10 @@ const verbsRoutes: Routes = [
       title: 'The Imperative'
     }
   },
+  {
+  	path: '**', 
+  	redirectTo: 'home'
+  }
 ];
 
-@NgModule({
-  imports: [
-  	RouterModule.forChild(verbsRoutes)
-  ],
-  exports: [RouterModule]
-})
-
-export class NavRoutingModule {}
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: true });
