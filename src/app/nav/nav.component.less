@@ -1,54 +1,133 @@
 @import "../shared/less/verbs-app-variables.less";
+@import "../shared/less/verbs-app-mixins.less";
+
+.toggleMenuIcon() {
+  .bar:nth-of-type(1) {
+    .transform(rotate(-45deg) translateY(0) translateX(0));
+  }
+
+  .bar:nth-of-type(2) {
+    opacity:0;
+  }
+
+  .bar:nth-of-type(3) {
+    .transform(rotate(45deg) translateY(0) translateX(0));
+  }
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0.2em;
+  left: 0.5em;
+  z-index: 5;
+  display: block;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  .svg-toggle {
+    fill: white;
+    pointer-events: all;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+
+    .bar {
+      .transform(rotate(0deg) translateY(0) translateX(0));
+      opacity:1;
+
+      -webkit-transform-origin: 20px 10px;
+      transform-origin: 20px 10px;
+
+      .transition(all 0.4s ease-in-out);
+
+      &:nth-of-type(1) {
+        -webkit-transform-origin: 20px 10px;
+        transform-origin: 20px 10px;
+
+        &.nav-opened {
+          .transform(rotate(-45deg) translateY(0) translateX(0));
+        }
+      }
+
+      &:nth-of-type(2) {
+        &.nav-opened {
+          opacity: 0;
+        }
+      }
+
+      &:nth-of-type(3) {
+        -webkit-transform-origin: 20px 20px;
+        transform-origin: 20px 20px;
+
+        &.nav-opened {
+          .transform(rotate(45deg) translateY(0) translateX(0));
+        }
+      }
+    }
+
+    &:hover {
+      .toggleMenuIcon();
+    }
+
+  }
+
+  
+
+}
 
 nav {
-	position: absolute;
-	z-index: 4;
-	top: 4em;
-	right: 0;
-	width: 100%;
-	width: 300px;
-	padding: 0;
-	background-color: @verbs-app-secondary-bg-color;
-	//display: none; // provisonal
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 3em 0 0 0;
+  background-color: @verbs-app-secondary-bg-color;
+  display: none;
 
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0; 
+  &.show {
+    display: block;
+  }
 
-		li {
-			display: inline-block;
-			font-size: 1.5em;
-			width: 100%;
-			height: auto;
-			line-height: 1.2em;
-			border-bottom: solid 1px @verbs-app-border-nav-color;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
 
-			a{
-				display: inline-block;
-				width: 100%;
-				height: 100%;
-				padding: 0.5em 1em;
-				text-decoration: none;
-				color: @verbs-app-nav-link-color;
+    li {
+      display: inline-block;
+      font-size: 1.5em;
+      width: 100%;
+      height: auto;
+      line-height: 1.2em;
+      border-bottom: solid 1px @verbs-app-border-nav-color;
 
-				&:hover {
-					color: white;
-				}
-			}
-		}
-	}
+      a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        color: @verbs-app-nav-link-color;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .nav-btn {
-	position: absolute;
-	top: 0.5em;
-	left: 0.5em;
-	display: block;
-	width: 1em;
-	height: 1em;
-	background-color: transparent;
-	border: none;
-	color: white;
-	font-size: 2em;
+  position: fixed;
+  top: 0.5em;
+  left: 0.5em;
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2em;
 }
