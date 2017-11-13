@@ -1,14 +1,3 @@
-<div class="container" [ngSwitch]="currentSection">
-	<app-verbs-subnav></app-verbs-subnav>
-	
-	<app-verbs-home *ngSwitchCase="'Home'"></app-verbs-home>
-	<app-verbs-regular-verbs *ngSwitchCase="'Regular Verbs'"></app-verbs-regular-verbs>
-	<app-verbs-irregular-verbs *ngSwitchCase="'Irregular Verbs'"></app-verbs-irregular-verbs>
-	<app-verbs-phrasal-verbs *ngSwitchCase="'Phrasal Verbs'"></app-verbs-phrasal-verbs>
-	<app-verbs-verb-to-be *ngSwitchCase="'Verb To Be'"></app-verbs-verb-to-be>
-	<app-verbs-verbs-with-prepositions *ngSwitchCase="'Verbs With Prepositions'"></app-verbs-verbs-with-prepositions>
-	<app-verbs-verbs-with-two-objects *ngSwitchCase="'Verbs With To Objects'"></app-verbs-verbs-with-two-objects>
-	<app-verbs-state-verbs-dynamic-verbs *ngSwitchCase="'State Verbs / Dynamic Verbs'"></app-verbs-state-verbs-dynamic-verbs>
-	<app-verbs-the-imperative *ngSwitchCase="'The Imperative'"></app-verbs-the-imperative>
-	<app-verbs-home *ngSwitchDefault></app-verbs-home >
+<div class="container">
+	<router-outlet></router-outlet>
 </div>

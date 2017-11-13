@@ -24,14 +24,11 @@ export class SubnavComponent implements OnInit {
     private location: Location
   ) {
 
-    /*const dataChildren = this.navService.getSubMenuItems();
+    const dataChildren = this.navService.getSubMenuItems();
 
     dataChildren.forEach((item, i) => {
       const parent = item.children[i].path.split('/')[0];
       const currentPath = window.location.hash.split('/')[1];
-      // console.log('parent: ', parent);
-      // console.log('currentPath: ', currentPath);
-      // console.log('children: ', item.children[i].path);
       if (parent === currentPath) {
         this.displaySubmenu = true;
         this.subMenuItems.push(item.children);
@@ -39,26 +36,10 @@ export class SubnavComponent implements OnInit {
     });
     this.activeSubMenuItem$ = this.navService.activeSubMenuItem$;
     this.subMenuItems = this.subMenuItems[0];
-    //route.params.subscribe(params => {
-      //console.log('subNav id parameter: ', params);
-    //});*/
-  }
-
-  navigate(path) {
-    /*
-    console.log('path: ', path);
-    this.router.navigate([{
-      outlets: {
-        primary: path,
-        subnav: path
-      }
-    }],
-    {relativeTo: this.route});
-    */
   }
 
   ngOnInit() {
-    console.log('this.subMenuItems: ', this.subMenuItems);
+    // console.log('this.subMenuItems: ', this.subMenuItems);
   }
 
 }

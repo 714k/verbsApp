@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./helping-verbs.component.less']
 })
 export class HelpingVerbsComponent implements OnInit {
-
+  sectionTitle = 'Helping Verbs';
   constructor() { }
 
   ngOnInit() {
