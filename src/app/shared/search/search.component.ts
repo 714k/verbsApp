@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verbs-app-search',
+  selector: 'app-verbs-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.less']
 })

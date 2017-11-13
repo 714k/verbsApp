@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verbs-app-regular-verbs',
+  selector: 'app-verbs-regular-verbs',
   templateUrl: './regular-verbs.component.html',
   styleUrls: ['./regular-verbs.component.less']
 })

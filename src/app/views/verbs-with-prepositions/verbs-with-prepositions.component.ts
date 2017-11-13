@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verbs-app-verbs-with-prepositions',
+  selector: 'app-verbs-verbs-with-prepositions',
   templateUrl: './verbs-with-prepositions.component.html',
   styleUrls: ['./verbs-with-prepositions.component.less']
 })

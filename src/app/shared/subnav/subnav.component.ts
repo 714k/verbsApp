@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { NavService, MenuItem, SubMenuItem } from '../nav/nav.service';
 
 @Component({
-  selector: 'verbs-app-subnav',
+  selector: 'app-verbs-subnav',
   templateUrl: './subnav.component.html',
   styleUrls: ['./subnav.component.less']
 })
@@ -22,16 +22,16 @@ export class SubnavComponent implements OnInit {
     private route: ActivatedRoute,
     private navService: NavService,
     private location: Location
-  ) { 
+  ) {
 
-    const dataChildren = this.navService.getSubMenuItems();
+    /*const dataChildren = this.navService.getSubMenuItems();
 
     dataChildren.forEach((item, i) => {
-      let parent = item.children[i].path.split('/')[0];
-      let currentPath = window.location.hash.split('/')[1];
-      //console.log('parent: ', parent);
-      //console.log('currentPath: ', currentPath);
-      //console.log('children: ', item.children[i].path);
+      const parent = item.children[i].path.split('/')[0];
+      const currentPath = window.location.hash.split('/')[1];
+      // console.log('parent: ', parent);
+      // console.log('currentPath: ', currentPath);
+      // console.log('children: ', item.children[i].path);
       if (parent === currentPath) {
         this.displaySubmenu = true;
         this.subMenuItems.push(item.children);
@@ -41,11 +41,11 @@ export class SubnavComponent implements OnInit {
     this.subMenuItems = this.subMenuItems[0];
     //route.params.subscribe(params => {
       //console.log('subNav id parameter: ', params);
-    //});
+    //});*/
   }
 
   navigate(path) {
-    /*    
+    /*
     console.log('path: ', path);
     this.router.navigate([{
       outlets: {

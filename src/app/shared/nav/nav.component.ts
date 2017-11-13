@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { NavService, MenuItem } from './nav.service';
 
 @Component({
-  selector: 'verbs-app-nav',
+  selector: 'app-verbs-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.less']
 })

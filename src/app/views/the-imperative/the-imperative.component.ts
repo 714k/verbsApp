@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verbs-app-the-imperative',
+  selector: 'app-verbs-the-imperative',
   templateUrl: './the-imperative.component.html',
   styleUrls: ['./the-imperative.component.less']
 })

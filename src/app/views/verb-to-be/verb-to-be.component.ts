@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verbs-app-verb-to-be',
+  selector: 'app-verbs-verb-to-be',
   templateUrl: './verb-to-be.component.html',
   styleUrls: ['./verb-to-be.component.less']
 })
