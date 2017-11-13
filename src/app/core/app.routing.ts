@@ -33,6 +33,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/transitive',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Transitive Verbs'
         }
@@ -40,6 +41,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/intransitive',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Intransitive Verbs'
         }
@@ -47,6 +49,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/linking-verbs',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Linking Verbs'
         }
@@ -54,6 +57,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/dynamic-verbs',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Dynamic Verbs'
         }
@@ -61,6 +65,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/static-verbs',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Static Verbs'
         }
@@ -68,6 +73,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/regular-verbs',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Regular Verbs'
         }
@@ -75,6 +81,7 @@ const routes: Routes = [
       {
         path: 'main-verbs/irregular-verbs',
         component: MainVerbsComponent,
+        outlet: 'context-menu',
         data: {
           title: 'Irregular Verbs'
         }
@@ -161,8 +168,6 @@ const routes: Routes = [
     data: {
       title: 'Regular Verbs'
     },
-    children: [
-    ],
   },
   {
     path: 'irregular-verbs',
@@ -170,8 +175,6 @@ const routes: Routes = [
     data: {
       title: 'Irregular Verbs'
     },
-    children: [
-    ],
   },
   {
     path: 'verb-to-be',

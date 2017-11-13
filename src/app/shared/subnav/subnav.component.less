@@ -3,10 +3,10 @@
 .en-app {
   &-subnav {
     position: fixed;
-    top: @en-app-header-height;
+    top: (@en-app-header-height - @en-app-subnav-height); 
     left: 0;
     width: 100%;
-    height: 2.5em;
+    height: @en-app-subnav-height;
     padding: 0;
     margin: 0;
     overflow: hidden;

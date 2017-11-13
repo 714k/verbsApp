@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./special-verbs.component.less']
 })
 export class SpecialVerbsComponent implements OnInit {
-
+  sectionTitle = 'Special Verbs';
   constructor() { }
 
   ngOnInit() {

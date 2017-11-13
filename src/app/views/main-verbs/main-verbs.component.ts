@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-verbs.component.less']
 })
 export class MainVerbsComponent implements OnInit {
-
+  sectionTitle = 'Main Verbs';
   constructor() { }
 
   ngOnInit() {
