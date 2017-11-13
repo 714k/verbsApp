@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'verbs-app-header',
+  selector: 'app-verbs-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less']
 })

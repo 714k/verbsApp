@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { NavService, MenuItem } from '../nav/nav.service';
 
 @Component({
-  selector: 'verbs-app-content',
+  selector: 'app-verbs-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.less']
 })

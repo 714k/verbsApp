@@ -1,4 +1,4 @@
-@import "../shared/less/verbs-app-variables.less";
+@import "../less/verbs-app-variables.less";
 
 .en-app {
   &-subnav {
@@ -34,13 +34,24 @@
         }
       }
 
-      a {
-        display: inline-block;
-        height: 100%;
-        line-height: 2.5em;
-        padding-right: 0.5em;
-        border-right: solid 1px #dedede;
+      p {
+        position: absolute;
+        top: 0;
+        left: 2.5em;
+
+        a {
+          display: inline-block;
+          height: 100%;
+          line-height: 2.5em;
+          padding: 0 0.5em;
+          border-right: solid 1px #1d2944;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
       }
+
     }
 
   }
