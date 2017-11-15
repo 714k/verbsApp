@@ -7,11 +7,14 @@ import { Title } from '@angular/platform-browser';
 export class MenuItem {
   path: string;
   title: string;
-  children?: any;
+  level: string;
 }
 
 export class SubMenuItem {
-  children?: any;
+  path: string;
+  title: string;
+  level: string;
+  parent: string;
 }
 
 @Injectable()
@@ -26,22 +29,26 @@ export class NavService {
 
   getMenuItems(): MenuItem[] {
     return this.router.config
-      .filter(route => route.data && route.data.title)
+      .filter(route => route.data && route.data.level === 'one')
       .map(route => {
         return {
           path: route.path,
           title: route.data.title,
-          children: route.children
+          level: route.data.level
         }
       });
   }
 
   getSubMenuItems(): SubMenuItem[] {
+    //console.log('config: ', this.router.config);
     return this.router.config
-      .filter(route => route.data && route.children)
+      .filter(route => route.data && route.data.level)
       .map(route => {
         return {
-          children: route.children
+          path: route.path,
+          title: route.data.title,
+          level: route.data.parent,
+          parent: route.data.parent
         }
       });
   }
