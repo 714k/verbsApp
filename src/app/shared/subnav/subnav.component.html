@@ -3,7 +3,7 @@
     <button ><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
     <p>
       <a *ngFor="let subNavItem of subMenuItems"
-         href="#/{{ subNavItem.path }}"
+         [routerLink]="['/' + subNavItem.path]"
          title="{{ subNavItem.title }}">
         {{ subNavItem.title }}</a>
     </p>
