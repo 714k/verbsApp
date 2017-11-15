@@ -1,11 +1,11 @@
-<div *ngIf="displaySubmenu === true" class="en-app-subnav">
-  <div class="en-app-subnav-container">
+<div class="en-app-subnav">
+  <div *ngIf="displaySubmenu === true" class="en-app-subnav-container">
     <button ><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
     <p>
       <a *ngFor="let subNavItem of subMenuItems"
          href="#/{{ subNavItem.path }}"
-         title="{{ subNavItem.data.title }}">
-        {{ subNavItem.data.title }}</a>
+         title="{{ subNavItem.title }}">
+        {{ subNavItem.title }}</a>
     </p>
     <button class="right" ><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </div>

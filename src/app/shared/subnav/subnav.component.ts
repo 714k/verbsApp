@@ -24,22 +24,24 @@ export class SubnavComponent implements OnInit {
     private location: Location
   ) {
 
-    const dataChildren = this.navService.getSubMenuItems();
+    const dataSubmenuItems = this.navService.getSubMenuItems();
 
-    dataChildren.forEach((item, i) => {
-      const parent = item.children[i].path.split('/')[0];
+    dataSubmenuItems.forEach((item, i) => {
+      //console.log('item: ', item.parent);
+
+      const parent = item.parent;
       const currentPath = window.location.hash.split('/')[1];
       if (parent === currentPath) {
         this.displaySubmenu = true;
-        this.subMenuItems.push(item.children);
+        this.subMenuItems.push(item);
       }
     });
     this.activeSubMenuItem$ = this.navService.activeSubMenuItem$;
-    this.subMenuItems = this.subMenuItems[0];
+    this.subMenuItems = this.subMenuItems;
   }
 
   ngOnInit() {
-    // console.log('this.subMenuItems: ', this.subMenuItems);
+     //console.log('this.subMenuItems: ', this.subMenuItems);
   }
 
 }

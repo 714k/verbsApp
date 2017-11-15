@@ -35,8 +35,8 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
-    //console.log('mainMenuItems', this.mainMenuItems);
-    //console.log('activeMenuItem$', this.activeMenuItem$);
+    // console.log('mainMenuItems', this.mainMenuItems);
+    // console.log('activeMenuItem$', this.activeMenuItem$);
   }
 
 }
