@@ -1,3 +1,11 @@
 <h2>{{sectionTitle}}</h2>
-<app-verbs-subnav></app-verbs-subnav>
+<div class="en-app-subnav">
+  <div class="en-app-subnav-container">
+    <button ><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+    <p>
+      <a [routerLink]="['transitive']">Transitive verbs</a>
+    </p>
+    <button class="right" ><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+</div>
 <!-- Display the subnav but the components doesn't load  -->

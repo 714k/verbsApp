@@ -15,7 +15,7 @@ import { CategoryComponent } from '../views/category/category.component';
 import { VerbComponent } from '../views/verb/verb.component';
 
 
-const routes: Routes = [
+const mainRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
@@ -28,153 +28,35 @@ const routes: Routes = [
     component: MainVerbsComponent,
     data: {
       title: 'Main Verbs'
-    },
-    children: [
-      {
-        path: 'main-verbs/transitive',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Transitive Verbs'
-        }
-      },
-      {
-        path: 'main-verbs/intransitive',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Intransitive Verbs'
-        }
-      },
-      {
-        path: 'main-verbs/linking-verbs',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Linking Verbs'
-        }
-      },
-      {
-        path: 'main-verbs/dynamic-verbs',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Dynamic Verbs'
-        }
-      },
-      {
-        path: 'main-verbs/static-verbs',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Static Verbs'
-        }
-      },
-      {
-        path: 'main-verbs/regular-verbs',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Regular Verbs'
-        }
-      },
-      {
-        path: 'main-verbs/irregular-verbs',
-        component: MainVerbsComponent,
-        outlet: 'context-menu',
-        data: {
-          title: 'Irregular Verbs'
-        }
-      },
-    ]
+    }
   },
   {
     path: 'helping-verbs',
     component: HelpingVerbsComponent,
     data: {
       title: 'Helping Verbs'
-    },
-    children: [
-      {
-        path: 'helping-verbs/primary-helping-verbs',
-        component: HelpingVerbsComponent,
-        data: {
-          title: 'Primary Helping Verbs'
-        }
-      },
-      {
-        path: 'helping-verbs/modal-helping-verbs',
-        component: HelpingVerbsComponent,
-        data: {
-          title: 'Modal Helping Verbs'
-        }
-      },
-      {
-        path: 'helping-verbs/semimodal-helping-verbs',
-        component: HelpingVerbsComponent,
-        data: {
-          title: 'Semimodal Helping Verbs'
-        }
-      },
-    ]
+    }
   },
   {
     path: 'special-verbs',
     component: SpecialVerbsComponent,
     data: {
       title: 'Special Verbs'
-    },
-    children: [
-      {
-        path: 'special-verbs/do-make',
-        component: SpecialVerbsComponent,
-        data: {
-          title: 'Do / Make'
-        }
-      },
-      {
-        path: 'special-verbs/going-to',
-        component: SpecialVerbsComponent,
-        data: {
-          title: 'Going To'
-        }
-      },
-      {
-        path: 'special-verbs/had-better',
-        component: SpecialVerbsComponent,
-        data: {
-          title: 'Had better'
-        }
-      },
-      {
-        path: 'special-verbs/phrasal-verbs',
-        component: SpecialVerbsComponent,
-        data: {
-          title: 'Phrasal Verbs'
-        }
-      },
-      {
-        path: 'special-verbs/will-going-to',
-        component: SpecialVerbsComponent,
-        data: {
-          title: 'Will / Going To'
-        }
-      },
-    ]
+    }
   },
   {
     path: 'regular-verbs',
     component: RegularVerbsComponent,
     data: {
       title: 'Regular Verbs'
-    },
+    }
   },
   {
     path: 'irregular-verbs',
     component: IrregularVerbsComponent,
     data: {
       title: 'Irregular Verbs'
-    },
+    }
   },
   {
     path: 'verb-to-be',
@@ -196,7 +78,7 @@ const routes: Routes = [
     data: {
       title: 'Verbs With To Objects'
     }
-  },
+  },  
   {
     path: 'the-imperative',
     component: TheImperativeComponent,
@@ -210,4 +92,150 @@ const routes: Routes = [
   }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: true });
+const childRoutes: Routes = [
+  {
+    path: 'main-verbs',
+    children: [
+      {
+        path: '',
+        redirectTo: 'main-verbs',
+        pathMatch: 'full'
+      },
+      {
+        path: 'transitive',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Transitive Verbs'
+        }
+      },
+      {
+        path: 'intransitive',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Intransitive Verbs'
+        }
+      },
+      {
+        path: 'linking-verbs',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Linking Verbs'
+        }
+      },
+      {
+        path: 'dynamic-verbs',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Dynamic Verbs'
+        }
+      },
+      {
+        path: 'static-verbs',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Static Verbs'
+        }
+      },
+      {
+        path: 'regular-verbs',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Regular Verbs'
+        }
+      },
+      {
+        path: 'irregular-verbs',
+        component: MainVerbsComponent,
+        outlet: 'context-menu',
+        data: {
+          title: 'Irregular Verbs'
+        }
+      },
+    ]
+  },
+  {
+    path: 'helping-verbs',
+    children: [
+      {
+        path: '',
+        redirectTo: 'helping-verbs',
+        pathMatch: 'full'
+      },
+      {
+        path: 'primary-helping-verbs',
+        component: HelpingVerbsComponent,
+        data: {
+          title: 'Primary Helping Verbs'
+        }
+      },
+      {
+        path: 'modal-helping-verbs',
+        component: HelpingVerbsComponent,
+        data: {
+          title: 'Modal Helping Verbs'
+        }
+      },
+      {
+        path: 'semimodal-helping-verbs',
+        component: HelpingVerbsComponent,
+        data: {
+          title: 'Semimodal Helping Verbs'
+        }
+      },
+    ]
+  },
+  {
+    path: 'special-verbs',
+    children: [
+      {
+        path: '',
+        redirectTo: 'special-verbs',
+        pathMatch: 'full'
+      },
+      {
+        path: 'do-make',
+        component: SpecialVerbsComponent,
+        data: {
+          title: 'Do / Make'
+        }
+      },
+      {
+        path: 'going-to',
+        component: SpecialVerbsComponent,
+        data: {
+          title: 'Going To'
+        }
+      },
+      {
+        path: 'had-better',
+        component: SpecialVerbsComponent,
+        data: {
+          title: 'Had better'
+        }
+      },
+      {
+        path: 'phrasal-verbs',
+        component: SpecialVerbsComponent,
+        data: {
+          title: 'Phrasal Verbs'
+        }
+      },
+      {
+        path: 'will-going-to',
+        component: SpecialVerbsComponent,
+        data: {
+          title: 'Will / Going To'
+        }
+      },
+    ]
+  }
+];
+
+export const mainRouting: ModuleWithProviders = RouterModule.forRoot(mainRoutes, { useHash: true });
+export const childRouting: ModuleWithProviders = RouterModule.forChild(childRoutes);
