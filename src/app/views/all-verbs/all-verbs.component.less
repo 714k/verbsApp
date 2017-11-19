@@ -1,0 +1,44 @@
+@import "../../shared/less/verbs-app-variables.less";
+
+table {
+  width: 100%;
+  //text-align: center;
+
+  thead {
+    /*background-color: #323f4a;
+    color: white;*/
+
+    tr {
+
+      th {
+        //text-indent: 0.2em;
+        //font-weight: normal;
+        padding: 0.5em 0;
+      }
+    }
+  }
+
+  tbody {
+    color: @verbs-app-link-text-color;
+
+    tr {
+      border-bottom: solid 1px @verbs-app-table-border-color;
+
+      &:hover {
+        cursor: pointer;
+        color: @verbs-app-table-text-color;
+      }
+
+      td {
+        padding: 0.5em 0;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  table {
+    font-size: 14px;
+  }
+}
