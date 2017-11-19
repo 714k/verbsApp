@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { routing } from './core/app.routing';
+import { appRouting } from './core/app.routing';
+import { VerbsService } from './shared/services/verbs.service';
 
 import { NavService } from './shared/nav/nav.service';
 import { HeaderComponent } from './shared/header/header.component';
@@ -86,9 +88,10 @@ import { VerbComponent } from './views/verb/verb.component';
   ],
   imports: [
     BrowserModule,
-    routing
+    HttpModule,
+    appRouting
   ],
-  providers: [NavService],
+  providers: [NavService, VerbsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

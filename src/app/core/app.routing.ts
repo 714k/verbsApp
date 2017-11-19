@@ -32,7 +32,7 @@ import { CategoryComponent } from '../views/category/category.component';
 import { VerbComponent } from '../views/verb/verb.component';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
@@ -236,4 +236,4 @@ const routes: Routes = [
   }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: true });
+export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });

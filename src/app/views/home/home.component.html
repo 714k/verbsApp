@@ -1,3 +1,7 @@
 <h2>{{sectionTitle}}</h2>
 <app-verbs-subnav></app-verbs-subnav>
 
+<div *ngFor="let verb of allVerbs">
+	<p>{{verb.title}}</p>
+</div>
+

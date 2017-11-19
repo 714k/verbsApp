@@ -25,7 +25,7 @@ export class NavService {
   private section = new Subject<any>();
   private title = new Subject<any>();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   getMenuItems(): MenuItem[] {
     return this.router.config
@@ -40,7 +40,7 @@ export class NavService {
   }
 
   getSubMenuItems(): SubMenuItem[] {
-    //console.log('config: ', this.router.config);
+    //  console.log('config: ', this.router.config);
     return this.router.config
       .filter(route => route.data && route.data.level)
       .map(route => {
@@ -49,7 +49,7 @@ export class NavService {
           title: route.data.title,
           level: route.data.parent,
           parent: route.data.parent
-        }
+        };
       });
   }
 
