@@ -1,0 +1,22 @@
+<h2>{{sectionTitle}}</h2>
+<app-verbs-subnav></app-verbs-subnav>
+
+<table>
+  <thead>
+    <tr>
+      <th class="hidden-xs">Title</th>
+      <th>Infinitive</th>
+      <th>Simple Past</th>
+      <th>Past Participle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let verb of (allVerbs | sortByTitle)" (click)="displayVerb()">
+      <td class="hidden-xs">{{verb.title}}</td>
+      <td>{{verb.infinitive}}</td>
+      <td>{{verb.simplePast}}</td>
+      <td>{{verb.pastParticiple}}</td>
+    </tr>
+  </tbody>
+</table>
+

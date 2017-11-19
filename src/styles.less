@@ -1,3 +1,4 @@
+//@import "~bootstrap/less/mixins/mixins.less";
 /* You can add global styles to this file, and also import other style files */
 @import "app/shared/less/verbs-app-variables.less";
 
@@ -6,6 +7,7 @@
 
 html,
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
   font-size: 18px;
@@ -23,9 +25,23 @@ body {
   }
 
   h2 {
-    margin: 0;
+    margin: 0 0 0.5em 0;
     padding: 0;
     text-align: center;
     color: @verbs-app-h2-color;
   } 
 }
+
+
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+//@media (min-width: @screen-sm-min) {  }
+
+/* Medium devices (desktops, 992px and up) */
+//@media (min-width: @screen-md-min) {  }
+
+/* Large devices (large desktops, 1200px and up) */
+//@media (min-width: @screen-lg-min) {  }

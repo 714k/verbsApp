@@ -27,6 +27,7 @@ import { VerbToBeComponent } from '../views/verb-to-be/verb-to-be.component';
 import { VerbsWithPrepositionsComponent } from '../views/verbs-with-prepositions/verbs-with-prepositions.component';
 import { VerbsWithTwoObjectsComponent } from '../views/verbs-with-two-objects/verbs-with-two-objects.component';
 import { TheImperativeComponent } from '../views/the-imperative/the-imperative.component';
+import { AllVerbsComponent } from '../views/all-verbs/all-verbs.component';
 
 import { CategoryComponent } from '../views/category/category.component';
 import { VerbComponent } from '../views/verb/verb.component';
@@ -227,6 +228,14 @@ const appRoutes: Routes = [
     component: TheImperativeComponent,
     data: {
       title: 'The Imperative',
+      level: 'one'
+    }
+  },
+  {
+    path: 'all-verbs',
+    component: AllVerbsComponent,
+    data: {
+      title: 'All Verbs',
       level: 'one'
     }
   },

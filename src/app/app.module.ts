@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { appRouting } from './core/app.routing';
 import { VerbsService } from './shared/services/verbs.service';
+import { MainPipes } from './shared/pipes/main-pipes.module';
 
 import { NavService } from './shared/nav/nav.service';
 import { HeaderComponent } from './shared/header/header.component';
@@ -45,6 +46,7 @@ import { TheImperativeComponent } from './views/the-imperative/the-imperative.co
 
 import { CategoryComponent } from './views/category/category.component';
 import { VerbComponent } from './views/verb/verb.component';
+import { AllVerbsComponent } from './views/all-verbs/all-verbs.component';
 
 @NgModule({
   declarations: [
@@ -85,11 +87,13 @@ import { VerbComponent } from './views/verb/verb.component';
 
     CategoryComponent,
     VerbComponent,
+    AllVerbsComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    appRouting
+    appRouting,
+    MainPipes
   ],
   providers: [NavService, VerbsService],
   bootstrap: [AppComponent]
