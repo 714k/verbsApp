@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-verbs-phrasal-verbs',
+  selector: 'app-phrasal-verbs',
   templateUrl: './phrasal-verbs.component.html',
   styleUrls: ['./phrasal-verbs.component.less']
 })
 export class PhrasalVerbsComponent implements OnInit {
-	sectionTitle = 'Phrasal Verbs';
+  sectionTitle = 'Phrasal Verbs';
 
   constructor() { }
 

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transitive-verbs.component.less']
 })
 export class TransitiveVerbsComponent implements OnInit {
-
+  sectionTitle = 'Transitive Verbs';
   constructor() { }
 
   ngOnInit() {
