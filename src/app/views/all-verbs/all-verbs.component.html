@@ -12,10 +12,18 @@
   </thead>
   <tbody>
     <tr *ngFor="let verb of (allVerbs | sortByTitle)" (click)="displayVerb()">
-      <td class="hidden-xs">{{verb.title}}</td>
-      <td>{{verb.infinitive}}</td>
-      <td>{{verb.simplePast}}</td>
-      <td>{{verb.pastParticiple}}</td>
+      <td class="hidden-xs">
+        <a [routerLink]="['./', verb.infinitive]">{{verb.title}}</a>
+      </td>
+      <td>
+        <a [routerLink]="['./', verb.infinitive]">{{verb.infinitive}}</a>
+      </td>
+      <td>
+        <a [routerLink]="['./', verb.infinitive]">{{verb.simplePast}}</a>
+      </td>
+      <td>
+        <a [routerLink]="['./', verb.infinitive]">{{verb.pastParticiple}}</a>
+      </td>
     </tr>
   </tbody>
 </table>
