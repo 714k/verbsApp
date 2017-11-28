@@ -240,6 +240,10 @@ const appRoutes: Routes = [
     }
   },
   {
+    path: 'all-verbs/:verb',
+    component: VerbComponent
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }
