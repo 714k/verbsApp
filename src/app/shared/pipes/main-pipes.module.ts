@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
 
-import { SortByTitle } from '../../shared/pipes/sort-by.pipe';
+import { SortByTitle, Capitalize } from '../../shared/pipes/sort-by.pipe';
 
 @NgModule({
   declarations:[
-  	SortByTitle
+    SortByTitle,
+    Capitalize
   ],
   imports:[
-  	CommonModule
+    CommonModule
   ],
   exports:[
-  	SortByTitle
+    SortByTitle,
+    Capitalize
   ]
 })
 

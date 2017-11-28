@@ -23,3 +23,10 @@ export class SortByTitle implements PipeTransform {
     }
   }
 }
+
+@Pipe({name: 'capitalize'})
+export class Capitalize implements PipeTransform {
+  transform(text: string):string {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+}
