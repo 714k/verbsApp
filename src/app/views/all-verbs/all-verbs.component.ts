@@ -16,14 +16,9 @@ export class AllVerbsComponent implements OnInit {
     this.verbsService.getAllVerbs()
       .subscribe((data: any[]) => {
         this.allVerbs = data;
-        console.log('data: ', data);
+        // console.log('data: ', data);
       });
   }
-
-  displayVerb() {
-  	
-  }
-
 
   ngOnInit() {
     this.getAllVerbs();
