@@ -16,8 +16,15 @@ export class VerbsService {
 
   getAllVerbs() {
     return this.http.get(apiConf.apiUrl + apiConf.verbsEndPoint)
-    	.map(this.extractData)
-    	.catch(this.handleError);
+		.map(this.extractData)
+		.catch(this.handleError);
+  }
+
+  getVerbByTitle(title) {
+    let url = apiConf.apiUrl + apiConf.verbsEndPoint + '/' + title;
+	  return this.http.get(url)
+		  .map(this.extractData)
+		  .catch(this.handleError);
   }
 
 
